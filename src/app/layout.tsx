@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/header";
 
 const clashGrotesk = localFont({
   src: [
@@ -40,14 +41,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${clashGrotesk.variable}`}>
-      <body className="font-sans">
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`relative !scroll-smooth pt-20 font-sans sm:pt-24 ${clashGrotesk.variable}`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <Header />
           {children}
         </ThemeProvider>
       </body>
