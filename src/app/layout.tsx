@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const clashGrotesk = localFont({
   src: [
@@ -53,6 +54,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
