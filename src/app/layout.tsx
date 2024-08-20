@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`relative !scroll-smooth pt-20 font-sans sm:pt-24 ${clashGrotesk.variable}`}
+        className={`relative !scroll-smooth pt-24 font-sans sm:pt-32 ${clashGrotesk.variable}`}
       >
         <ThemeProvider
           attribute="class"
