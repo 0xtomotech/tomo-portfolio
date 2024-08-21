@@ -7,6 +7,10 @@ import {
   IconUser,
   IconEye,
 } from "@tabler/icons-react";
+import Image from "next/image";
+import { LogoShowcase } from "@/components/logoshowcase";
+import tomoPhoto from "@/assets/Tomo-portfolio-img-2.png";
+import { CourseList } from "@/components/course-list";
 
 export type GridItem = {
   title: string;
@@ -22,48 +26,60 @@ const DummySkeleton: React.FC<{ className?: string }> = ({ className }) => (
 
 export const aboutGridItems: GridItem[] = [
   {
-    title: "Web Development",
-    description: "Developed webapps with various complexities.",
-    header: <DummySkeleton className="h-full w-full" />,
-    className: "md:col-span-1 md:row-span-2",
-    icon: <IconCode className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Data Science & Analytics",
+    title: "Data Wizard",
     description:
-      "I'm a data wizard, analyzed, designed data, pipelines and database architecture.",
-    header: <DummySkeleton className="h-full w-full" />,
-    className: "md:col-span-1 md:row-span-1 min-h-[200px]",
+      "Data Science & Analytics is my jam - I love to analyze, make sense of numbers and identify trends.",
+    header: null, // This will be replaced by the ParallaxHeader component
+    className: "md:col-span-1 md:row-span-2",
     icon: <IconChartBar className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Natural Problem Solver",
+    title: "Diverse Range of Experience",
     description:
-      "I like to tackle complex and interesting challenges, with out of the box thinking.",
-    header: <DummySkeleton className="h-full w-full" />,
+      "Worked with companies of all sizes, from startups to corporates.",
+    header: <LogoShowcase />,
+    className: "md:col-span-1 md:row-span-1",
+    icon: <IconChartBar className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "Self-taught developer",
+    description:
+      "After years of growing businesses and developing client relationships, I decided to take the leap and become a developer to chase my dreams. No regrets.",
+    header: <CourseList />,
     className: "md:col-span-1 md:row-span-2",
-    icon: <IconPuzzle className="h-4 w-4 text-neutral-500" />,
+    icon: <IconCode className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Diverse Range of Specialties",
     description:
       "Web development combined with strong data skills and business development expertise",
     header: <DummySkeleton className="h-full w-full" />,
-    className: "md:col-span-1 md:row-span-1 min-h-[200px]",
+    className: "md:col-span-1 md:row-span-1",
     icon: <IconBrain className="h-4 w-4 text-neutral-500" />,
-  },
-  {
-    title: "Yep, that's me in the photo.",
-    description: "Based in Berlin, Available flexibly.",
-    header: <DummySkeleton className="h-full w-full" />,
-    className: "md:col-span-2 md:row-span-2",
-    icon: <IconUser className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Visualize data in beautiful style",
     description: "I bring data to life in a visually appealing way.",
     header: <DummySkeleton className="h-full w-full" />,
-    className: "md:col-span-1 md:row-span-2",
+    className: "md:col-span-2 md:row-span-1",
+    icon: <IconUser className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    title: "Yep, that's me in the photo.",
+    description: "Based in Berlin, Available flexibly.",
+    header: (
+      <div className="relative h-full w-full overflow-hidden rounded-lg bg-primary">
+        <Image
+          src={tomoPhoto}
+          alt="Your Photo"
+          width={300} // Set this to the intrinsic width of your image
+          height={400} // Set this to your desired height
+          style={{ objectFit: "contain", width: "auto", height: "100%" }}
+          priority
+        />
+      </div>
+    ),
+    className: "md:col-span-1 md:row-span-1",
     icon: <IconEye className="h-4 w-4 text-neutral-500" />,
   },
 ];

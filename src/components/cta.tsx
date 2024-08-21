@@ -81,14 +81,14 @@ const CTA: React.FC = () => {
           >
             {/* When not hovered */}
             <div
-              className="absolute inset-0 bg-orange-600 bg-blend-overlay transition duration-700 [mask-image:radial-gradient(50%_50%_at_50%_35%,black,transparent)] group-hover:opacity-0"
+              className="absolute inset-0 bg-primary bg-blend-overlay transition duration-700 [mask-image:radial-gradient(50%_50%_at_50%_35%,black,transparent)] group-hover:opacity-0"
               style={{
                 backgroundImage: `url(${gridLines.src})`,
               }}
             ></div>
             {/* When hovered */}
             <motion.div
-              className="absolute inset-0 bg-orange-600 opacity-0 bg-blend-overlay transition duration-700 group-hover:opacity-100"
+              className="absolute inset-0 bg-primary opacity-0 bg-blend-overlay transition duration-700 group-hover:opacity-100"
               style={{
                 maskImage,
                 backgroundImage: `url(${gridLines.src})`,
@@ -98,8 +98,8 @@ const CTA: React.FC = () => {
             {/* Content */}
             <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8">
-                <div className="flex flex-col justify-start">
-                  <h1 className="mb-4 text-4xl font-bold text-foreground">
+                <div className="flex w-[500px] flex-col justify-start">
+                  <h1 className="mb-4 text-6xl font-bold text-foreground">
                     Let&apos;s create something amazing together!
                   </h1>
                   <p className="text-xl text-foreground">

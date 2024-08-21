@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="mx-auto max-w-7xl px-5 lg:px-20">
         <section className="pb-[10rem]" id="home">
           <div className="flex flex-col items-start">
-            <h1 className="mb-2 max-w-[600px] text-4xl font-bold sm:text-5xl">
+            <h1 className="mb-2 max-w-[800px] text-4xl font-bold sm:text-7xl">
               Hello there... I&apos;m <span className="text-primary">Tomo</span>
               !
             </h1>
