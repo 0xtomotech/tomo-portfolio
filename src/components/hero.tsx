@@ -8,14 +8,15 @@ const Hero = () => {
         <section className="pb-[10rem]" id="home">
           <div className="flex flex-col items-start">
             <h1 className="mb-2 max-w-[600px] text-4xl font-bold sm:text-5xl">
-              Hello there... I'm <span className="text-primary">Tomo</span>!
+              Hello there... I&apos;m <span className="text-primary">Tomo</span>
+              !
             </h1>
             <h1 className="mb-8 max-w-[600px] text-3xl font-medium sm:text-5xl">
               A developer, problem solver, and business expert.
             </h1>
             <p className="mb-2 max-w-[600px] text-xl text-muted-foreground">
-              I love webdev, data analytics and I'm passionate about developing
-              ideas and building projects.
+              I love webdev, data analytics and I&apos;m passionate about
+              developing ideas and building projects.
             </p>
             <p className="mb-8 max-w-[600px] text-xl text-muted-foreground">
               Let me show you a glimpse of my world, and who knows, maybe one

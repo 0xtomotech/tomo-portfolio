@@ -31,7 +31,7 @@ const useRelativeMousePosition = (to: React.RefObject<HTMLElement>) => {
   useEffect(() => {
     window.addEventListener("mousemove", updateMousePosition);
     return () => window.removeEventListener("mousemove", updateMousePosition);
-  }, []);
+  }, [updateMousePosition]);
 
   return [mouseX, mouseY];
 };
@@ -97,11 +97,11 @@ const CTA: React.FC = () => {
               <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8">
                 <div className="flex flex-col justify-start">
                   <h1 className="mb-4 text-4xl font-bold text-foreground">
-                    Contact Me
+                    Let&apos;s create something amazing together!
                   </h1>
-                  <p className="text-xl text-white/80">
-                    A possible collaboration just crossed your mind? Don't
-                    hesitate a bit and send me an email using the form!
+                  <p className="text-xl text-foreground">
+                    Ready to bring your next project to life? Let's connect and
+                    discuss how I can help you achieve your goals.
                   </p>
                 </div>
                 <div className="flex items-center">

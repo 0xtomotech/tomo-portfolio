@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { MoveUpRight } from "lucide-react";
 
 const links = [
   { name: "Home", hash: "#home" },
@@ -54,10 +55,17 @@ const Footer: React.FC = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground"
+                className="flex items-center space-x-1 text-muted-foreground hover:text-foreground"
                 whileHover={{ y: -2 }}
               >
-                {link.name}
+                <span>{link.name}</span>
+                <motion.span
+                  initial={{ opacity: 0, x: -5 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <MoveUpRight size={16} />
+                </motion.span>
               </motion.a>
             ))}
           </div>
