@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import {
   motion,
   useMotionTemplate,
@@ -21,12 +21,15 @@ const useRelativeMousePosition = (to: React.RefObject<HTMLElement>) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const updateMousePosition = (event: MouseEvent) => {
-    if (!to.current) return;
-    const { top, left } = to.current.getBoundingClientRect();
-    mouseX.set(event.clientX - left);
-    mouseY.set(event.clientY - top);
-  };
+  const updateMousePosition = useCallback(
+    (event: MouseEvent) => {
+      if (!to.current) return;
+      const { top, left } = to.current.getBoundingClientRect();
+      mouseX.set(event.clientX - left);
+      mouseY.set(event.clientY - top);
+    },
+    [to, mouseX, mouseY],
+  );
 
   useEffect(() => {
     window.addEventListener("mousemove", updateMousePosition);
@@ -100,8 +103,8 @@ const CTA: React.FC = () => {
                     Let&apos;s create something amazing together!
                   </h1>
                   <p className="text-xl text-foreground">
-                    Ready to bring your next project to life? Let's connect and
-                    discuss how I can help you achieve your goals.
+                    Ready to bring your next project to life? Let&apos;s connect
+                    and discuss how I can help you achieve your goals.
                   </p>
                 </div>
                 <div className="flex items-center">
