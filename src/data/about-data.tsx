@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  IconBrain,
-  IconCode,
-  IconChartBar,
-  IconPuzzle,
-  IconUser,
-  IconEye,
-} from "@tabler/icons-react";
+
 import Image from "next/image";
 import { LogoShowcase } from "@/components/logoshowcase";
 import tomoPhoto from "@/assets/Tomo-portfolio-img-2.png";
@@ -21,7 +14,6 @@ export type GridItem = {
   description: string;
   header: React.ReactNode;
   className: string;
-  icon: React.ReactNode;
 };
 
 const DummySkeleton: React.FC<{ className?: string }> = ({ className }) => (
@@ -44,7 +36,6 @@ export const aboutGridItems: GridItem[] = [
       "Data Science & Analytics is my jam - I love to analyze, make sense of numbers and identify trends.",
     header: null, // This will be replaced by the ParallaxHeader component
     className: "md:col-span-1 md:row-span-2",
-    icon: <IconChartBar className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Diverse Range of Experience",
@@ -52,7 +43,6 @@ export const aboutGridItems: GridItem[] = [
       "Worked with companies of all sizes, from startups to corporates.",
     header: <LogoShowcase />,
     className: "md:col-span-1 md:row-span-1",
-    icon: <IconChartBar className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Self-taught developer",
@@ -60,7 +50,6 @@ export const aboutGridItems: GridItem[] = [
       "After years of growing businesses and developing client relationships, I decided to take the leap and become a developer to chase my dreams. No regrets.",
     header: <CourseList />,
     className: "md:col-span-1 md:row-span-2",
-    icon: <IconCode className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "A Business Beveloper turned Developer",
@@ -68,7 +57,6 @@ export const aboutGridItems: GridItem[] = [
       "A refreshing combintation of web development, data, strategy, business & analytical expertise.",
     header: <Animation />,
     className: "md:col-span-1 md:row-span-1",
-    icon: <IconBrain className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "I bring data to life",
@@ -76,7 +64,6 @@ export const aboutGridItems: GridItem[] = [
       "Love to visualise trends, build dashboards, and showcase insights in a creative and appealing way.",
     header: <Chart />, // Use the new NBAStatsChart component here
     className: "md:col-span-2 md:row-span-1",
-    icon: <IconUser className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Hey, this is me! :)",
@@ -94,6 +81,5 @@ export const aboutGridItems: GridItem[] = [
       </div>
     ),
     className: "md:col-span-1 md:row-span-1",
-    icon: <IconEye className="h-4 w-4 text-neutral-500" />,
   },
 ];

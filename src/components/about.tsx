@@ -66,9 +66,10 @@ const GridItemCard: React.FC<{ item: GridItem; index: number }> = ({
       <CardContent className="px-4 pb-4 pt-1">
         <div className="flex items-center justify-between">
           <CardTitle className="text-lg">{item.title}</CardTitle>
-          {item.icon}
         </div>
-        <CardDescription className="">{item.description}</CardDescription>
+        <CardDescription className="text-muted-foreground">
+          {item.description}
+        </CardDescription>
       </CardContent>
     </Card>
   );

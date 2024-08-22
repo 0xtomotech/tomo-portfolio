@@ -98,7 +98,7 @@ const CTA: React.FC = () => {
             {/* Content */}
             <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8">
-                <div className="flex w-[500px] flex-col justify-start">
+                <div className="flex flex-col justify-start sm:w-[500px]">
                   <h1 className="mb-4 text-6xl font-bold text-foreground">
                     Let&apos;s create something amazing together!
                   </h1>
