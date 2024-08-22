@@ -14,7 +14,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 
 // Import your background image here
-import dataScienceBg from "@/assets/data-science-bg.png";
+import dataScienceBg from "@/assets/data-science-bg-dark.png";
 import dataScienceBgLight from "@/assets/data-science-bg-light.png"; // Replace with your light mode image
 
 const ParallaxHeader: React.FC = () => {

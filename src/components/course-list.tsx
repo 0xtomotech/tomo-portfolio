@@ -1,22 +1,25 @@
 import React from "react";
-import { MoveUpRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 const courses = [
   {
-    name: "CS50x by Harvard",
+    name: "CS50x: Introduction to Computer Science",
     institution: "Harvard",
     url: "https://pll.harvard.edu/course/cs50-introduction-computer-science",
+    completed: true,
   },
   {
     name: "CS50P: Programming with Python",
     institution: "Harvard",
     url: "https://www.harvardonline.harvard.edu/course/cs50s-introduction-programming-python",
+    completed: true,
   },
   {
     name: "CS50W: Web Programming with Python and JavaScript",
     institution: "Harvard",
     url: "https://pll.harvard.edu/course/cs50s-web-programming-python-and-javascript",
+    completed: true,
   },
 ];
 
@@ -42,42 +45,60 @@ const sources = [
   },
 ];
 
-const LinkList: React.FC<{
+const BadgeList: React.FC<{
   items: typeof courses | typeof sources;
   title: string;
-}> = ({ items, title }) => (
+  isCompleted?: boolean;
+}> = ({ items, title, isCompleted = false }) => (
   <>
-    <h3 className="pb-4 text-base font-medium">{title}</h3>
-    <div className="flex flex-col gap-2">
+    <h3 className="mb-2 text-base font-medium">{title}</h3>
+    <div className="flex flex-wrap gap-2">
       {items.map((item) => (
-        <motion.a
+        <a
           key={item.name}
           href={item.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center space-x-1 text-xs text-muted-foreground hover:text-foreground"
-          whileHover={{ y: -2 }}
         >
-          <motion.span
-            initial={{ opacity: 0, x: -5 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.2 }}
+          <Badge
+            variant={isCompleted ? "default" : "secondary"}
+            className="cursor-pointer transition-all hover:scale-105"
           >
-            <MoveUpRight size={12} />
-          </motion.span>
-          <span>{item.name}</span>
-        </motion.a>
+            {item.name}
+          </Badge>
+        </a>
       ))}
     </div>
   </>
 );
 
+const GitHubSection: React.FC = () => (
+  <>
+    <h3 className="mb-2 text-base font-medium">Built Interesting Projects</h3>
+    <a
+      href="https://github.com/0xtomotech" // Replace with your actual GitHub profile URL
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Badge
+        variant="default"
+        className="inline-flex cursor-pointer items-center space-x-2 text-base transition-all hover:scale-105"
+      >
+        <IconBrandGithub className="h-4 w-4" />
+        <span>Check out my GitHub</span>
+      </Badge>
+    </a>
+  </>
+);
+
 export const CourseList: React.FC = () => {
   return (
-    <div className="flex h-full flex-col rounded-lg bg-muted p-4">
-      <LinkList items={courses} title="Completed Courses" />
-      <div className="my-4 border-t border-border"></div>
-      <LinkList items={sources} title="Favourite sources of wisdom" />
+    <div className="flex h-full flex-col space-y-4 rounded-lg bg-muted p-4">
+      <BadgeList items={courses} title="Completed Courses" isCompleted={true} />
+      <div className="border-t border-border"></div>
+      <GitHubSection />
+      <div className="border-t border-border"></div>
+      <BadgeList items={sources} title="Favourite sources of wisdom" />
     </div>
   );
 };

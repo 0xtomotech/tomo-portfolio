@@ -11,6 +11,10 @@ import Image from "next/image";
 import { LogoShowcase } from "@/components/logoshowcase";
 import tomoPhoto from "@/assets/Tomo-portfolio-img-2.png";
 import { CourseList } from "@/components/course-list";
+import { Chart } from "@/components/chart2";
+import Lottie from "lottie-react";
+import animationData from "@/assets/multitasking.json";
+import ClientSideLottie from "@/components/client-side-lottie";
 
 export type GridItem = {
   title: string;
@@ -22,6 +26,15 @@ export type GridItem = {
 
 const DummySkeleton: React.FC<{ className?: string }> = ({ className }) => (
   <div className={`h-full w-full rounded-lg bg-muted ${className}`}></div>
+);
+
+const Animation: React.FC<{ className?: string }> = ({ className }) => (
+  <div className={`h-full w-full rounded-lg bg-muted ${className}`}>
+    <div className="flex items-center justify-center">
+      {/* <Lottie animationData={animationData} className="h-[250px]" /> */}
+      <ClientSideLottie animationData={animationData} className="h-[250px]" />
+    </div>
+  </div>
 );
 
 export const aboutGridItems: GridItem[] = [
@@ -50,22 +63,23 @@ export const aboutGridItems: GridItem[] = [
     icon: <IconCode className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Diverse Range of Specialties",
+    title: "A Business Beveloper turned Developer",
     description:
-      "Web development combined with strong data skills and business development expertise",
-    header: <DummySkeleton className="h-full w-full" />,
+      "A refreshing combintation of web development, data, strategy, business & analytical expertise.",
+    header: <Animation />,
     className: "md:col-span-1 md:row-span-1",
     icon: <IconBrain className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Visualize data in beautiful style",
-    description: "I bring data to life in a visually appealing way.",
-    header: <DummySkeleton className="h-full w-full" />,
+    title: "I bring data to life",
+    description:
+      "Love to visualise trends, build dashboards, and showcase insights in a creative and appealing way.",
+    header: <Chart />, // Use the new NBAStatsChart component here
     className: "md:col-span-2 md:row-span-1",
     icon: <IconUser className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Yep, that's me in the photo.",
+    title: "Hey, this is me! :)",
     description: "Based in Berlin, Available flexibly.",
     header: (
       <div className="relative h-full w-full overflow-hidden rounded-lg bg-primary">

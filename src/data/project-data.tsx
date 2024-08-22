@@ -232,34 +232,4 @@ export const projectsData: Project[] = [
       "A collection of projects completed as part of Harvard's CS50 Web Programming course. These projects showcase a wide range of web development skills, from frontend design to backend implementation using various technologies.",
     imageUrl: "https://picsum.photos/300/200",
   },
-  {
-    title: "CS50P",
-    summary: "Python programming projects from Harvard's CS50P",
-    category: ["CS50"],
-    techStack: ["Python"],
-    project1: {
-      name: "Course site",
-      githubRepo:
-        "https://www.harvardonline.harvard.edu/course/cs50s-introduction-programming-python",
-    },
-    rating: "must have",
-    description:
-      "Projects and assignments from Harvard's CS50's Introduction to Programming with Python. This collection demonstrates proficiency in Python programming, covering topics from basic syntax to advanced concepts and practical applications.",
-    imageUrl: "https://picsum.photos/300/200",
-  },
-  {
-    title: "CS50",
-    summary: "Comprehensive computer science projects from Harvard's CS50",
-    category: ["CS50"],
-    techStack: ["C++", "Python", "Javascript"],
-    project1: {
-      name: "Course site",
-      githubRepo:
-        "https://pll.harvard.edu/course/cs50-introduction-computer-science",
-    },
-    rating: "must have",
-    description:
-      "A comprehensive showcase of projects from Harvard's CS50 Introduction to Computer Science course. This collection demonstrates a broad understanding of computer science principles and practical programming skills in multiple languages.",
-    imageUrl: "https://picsum.photos/300/200",
-  },
 ];
