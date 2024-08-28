@@ -69,12 +69,12 @@ export const aboutGridItems: GridItem[] = [
     title: "Hey, this is me! :)",
     description: "Based in Berlin, Available flexibly.",
     header: (
-      <div className="relative h-full w-full overflow-hidden rounded-lg bg-primary">
+      <div className="relative w-full overflow-hidden rounded-lg bg-primary">
         <Image
           src={tomoPhoto}
           alt="Your Photo"
-          width={300} // Set this to the intrinsic width of your image
-          height={400} // Set this to your desired height
+          width={200} // Set this to the intrinsic width of your image
+          height={300} // Set this to your desired height
           style={{ objectFit: "contain", width: "auto", height: "100%" }}
           priority
         />

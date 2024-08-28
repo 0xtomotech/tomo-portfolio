@@ -57,7 +57,7 @@ export function Chart() {
   ).toFixed(1);
   return (
     <div className="flex flex-col gap-0 rounded-lg bg-muted py-2">
-      <div className="mb-4 flex flex-col items-center gap-1">
+      <div className="mb-4 flex flex-col items-center gap-1 text-sm sm:text-base">
         <div className="flex items-center gap-2 leading-none">
           NBA scoring increased by {scoringIncrease}% over the last 20 years
         </div>

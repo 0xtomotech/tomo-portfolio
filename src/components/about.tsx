@@ -54,7 +54,7 @@ const GridItemCard: React.FC<{ item: GridItem; index: number }> = ({
 }) => {
   return (
     <Card className={`flex flex-col ${item.className}`}>
-      <CardHeader className="flex-grow overflow-hidden p-4">
+      <CardHeader className="h-auto flex-grow overflow-hidden p-4">
         {index === 0 ? (
           <div className="h-48 md:h-full">
             <ParallaxHeader />
@@ -84,7 +84,7 @@ const About: React.FC = () => {
           <p className="mb-12 text-xl text-muted-foreground">
             Get to know me better through my skills and experiences.
           </p>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-[auto_1fr_1fr]">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-[auto_1fr_0.8fr]">
             {aboutGridItems.map((item, index) => (
               <GridItemCard key={index} item={item} index={index} />
             ))}
