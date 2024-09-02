@@ -10,18 +10,32 @@ import {
 import animation1 from "@/public/web-dev-animation.json";
 import animation2 from "@/public/data-analytics-animation.json";
 import animation3 from "@/public/business-dev-animation.json";
-// import Lottie from "lottie-react";
 
 import { Lightbulb } from "lucide-react";
 import { useRef } from "react";
 
 import dynamic from "next/dynamic";
 
-// const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-
-// const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import React, { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
+
+const Spinner: React.FC<{ className?: string }> = ({ className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={`animate-spin ${className}`}
+  >
+    <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+  </svg>
+);
 
 const LottiePlayer = dynamic(
   () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
@@ -43,16 +57,54 @@ const ClientSideLottie: React.FC<AnimationProps> = ({
   autoplay = true,
   loop = false,
 }) => {
+  const [loading, setLoading] = useState(true);
+
+  const handleLottieEvent = (event: string) => {
+    if (event === "load") {
+      setLoading(false);
+    }
+  };
+
   return (
-    <LottiePlayer
-      autoplay={autoplay}
-      loop={loop}
-      src={animationData}
-      //   style={{ width: "100%", height: "100%" }}
-      className={className}
-    />
+    <div className={`relative ${className}`}>
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Spinner className="h-12 w-12 text-primary" />
+        </div>
+      )}
+      <LottiePlayer
+        autoplay={autoplay}
+        loop={loop}
+        hover={true}
+        src={animationData}
+        onEvent={handleLottieEvent}
+        className={cn(
+          loading ? "opacity-0" : "opacity-100",
+          "duration-600 transition-opacity",
+          className,
+        )}
+      />
+    </div>
   );
 };
+
+// const ClientSideLottie: React.FC<AnimationProps> = ({
+//   animationData,
+//   className,
+//   autoplay = true,
+//   loop = false,
+// }) => {
+//   return (
+//     <LottiePlayer
+//       autoplay={autoplay}
+//       loop={loop}
+//       hover={true}
+//       src={animationData}
+//       //   style={{ width: "100%", height: "100%" }}
+//       className={className}
+//     />
+//   );
+// };
 
 const services = [
   {
