@@ -12,13 +12,14 @@ import animation2 from "@/public/data-analytics-animation.json";
 import animation3 from "@/public/business-dev-animation.json";
 
 import { Lightbulb } from "lucide-react";
-import { useRef } from "react";
+import { forwardRef, useImperativeHandle, useRef } from "react";
 
 import dynamic from "next/dynamic";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { Player, PlayerEvent } from "@lottiefiles/react-lottie-player";
 
 const Spinner: React.FC<{ className?: string }> = ({ className }) => (
   <svg
@@ -51,42 +52,63 @@ interface AnimationProps {
   loop?: boolean;
 }
 
-const ClientSideLottie: React.FC<AnimationProps> = ({
-  animationData,
-  className,
-  autoplay = true,
-  loop = false,
-}) => {
-  const [loading, setLoading] = useState(true);
+export interface ClientSideLottieRef {
+  play: () => void;
+  pause: () => void;
+  stop: () => void;
+  setSeeker: (frame: number, play?: boolean) => void;
+}
 
-  const handleLottieEvent = (event: string) => {
-    if (event === "load") {
-      setLoading(false);
-    }
-  };
+const ClientSideLottie = forwardRef<ClientSideLottieRef, AnimationProps>(
+  ({ animationData, className, autoplay = true, loop = false }, ref) => {
+    const [loading, setLoading] = useState(true);
+    const [lottieInstance, setLottieInstance] = useState<any | null>(null);
 
-  return (
-    <div className={`relative ${className}`}>
-      {loading && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Spinner className="h-12 w-12 text-primary" />
-        </div>
-      )}
-      <LottiePlayer
-        autoplay={autoplay}
-        loop={loop}
-        hover={true}
-        src={animationData}
-        onEvent={handleLottieEvent}
-        className={cn(
-          loading ? "opacity-0" : "opacity-100",
-          "duration-600 transition-opacity",
-          className,
+    useImperativeHandle(ref, () => ({
+      play: () => lottieInstance?.play(),
+      pause: () => lottieInstance?.pause(),
+      stop: () => lottieInstance?.stop(),
+      setSeeker: (frame: number, play: boolean = false) => {
+        if (lottieInstance) {
+          lottieInstance.goToAndStop(frame, true);
+          if (play) {
+            lottieInstance.play();
+          }
+        }
+      },
+    }));
+
+    const handleLottieEvent = (event: PlayerEvent) => {
+      if (event === "load") {
+        setLoading(false);
+      }
+    };
+
+    return (
+      <div className={`relative ${className}`}>
+        {loading && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Spinner className="h-12 w-12 text-primary" />
+          </div>
         )}
-      />
-    </div>
-  );
-};
+        <LottiePlayer
+          lottieRef={(instance) => setLottieInstance(instance)}
+          autoplay={autoplay}
+          loop={loop}
+          src={animationData}
+          onEvent={handleLottieEvent}
+          className={cn(
+            loading ? "opacity-0" : "opacity-100",
+            "duration-600 transition-opacity",
+            className,
+          )}
+        />
+      </div>
+    );
+  },
+);
+
+ClientSideLottie.displayName = "ClientSideLottie";
 
 // const ClientSideLottie: React.FC<AnimationProps> = ({
 //   animationData,
@@ -139,16 +161,33 @@ const ServiceCard: React.FC<{
   service: (typeof services)[0];
   index: number;
 }> = ({ service, index }) => {
+  const lottieRef = useRef<ClientSideLottieRef>(null);
+
+  const handleHover = () => {
+    lottieRef.current?.play();
+  };
+
+  const handleMouseLeave = () => {
+    // Reset the animation to the start and pause it
+    lottieRef.current?.setSeeker(0);
+  };
+
   return (
-    <Card className="flex flex-col transition-shadow duration-300 ease-in-out hover:shadow-lg">
+    <Card
+      onMouseEnter={handleHover}
+      onMouseLeave={handleMouseLeave}
+      className="flex flex-col transition-shadow duration-300 ease-in-out hover:shadow-lg"
+    >
       <CardHeader>
         <div className={`mb-4 flex justify-center`}>
           {/* <Lightbulb size={48} /> */}
           {/* <DotLottieReact src="/assets/lottie/test2.lottie" loop autoplay /> */}
           {/* <Lottie animationData={service.icon} className="h-[100px]" /> */}
           <ClientSideLottie
+            ref={lottieRef}
             animationData={service.icon}
             className="h-[200px]"
+            autoplay={false}
           />
         </div>
         <CardTitle className="text-center text-2xl">{service.name}</CardTitle>
