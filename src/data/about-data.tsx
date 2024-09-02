@@ -21,7 +21,7 @@ const DummySkeleton: React.FC<{ className?: string }> = ({ className }) => (
 );
 
 const Animation: React.FC<{ className?: string }> = ({ className }) => (
-  <div className={`h-full w-full rounded-lg bg-muted ${className}`}>
+  <div className={`flex h-full w-full rounded-lg bg-muted ${className}`}>
     <div className="flex items-center justify-center">
       {/* <Lottie animationData={animationData} className="h-[250px]" /> */}
       <ClientSideLottie

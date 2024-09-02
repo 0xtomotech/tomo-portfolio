@@ -10,6 +10,7 @@ import {
 import animation1 from "@/public/web-dev-animation.json";
 import animation2 from "@/public/data-analytics-animation.json";
 import animation3 from "@/public/business-dev-animation.json";
+import { Badge } from "./ui/badge";
 
 import { Lightbulb } from "lucide-react";
 import { forwardRef, useImperativeHandle, useRef } from "react";
@@ -20,6 +21,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Player, PlayerEvent } from "@lottiefiles/react-lottie-player";
+import { motion } from "framer-motion";
 
 const Spinner: React.FC<{ className?: string }> = ({ className }) => (
   <svg
@@ -110,50 +112,64 @@ const ClientSideLottie = forwardRef<ClientSideLottieRef, AnimationProps>(
 
 ClientSideLottie.displayName = "ClientSideLottie";
 
-// const ClientSideLottie: React.FC<AnimationProps> = ({
-//   animationData,
-//   className,
-//   autoplay = true,
-//   loop = false,
-// }) => {
-//   return (
-//     <LottiePlayer
-//       autoplay={autoplay}
-//       loop={loop}
-//       hover={true}
-//       src={animationData}
-//       //   style={{ width: "100%", height: "100%" }}
-//       className={className}
-//     />
-//   );
-// };
+// const services = [
+//   {
+//     name: "Web Development",
+//     description:
+//       "Building responsive and scalable web applications using modern technologies.",
+//     techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+//     icon: animation1,
+//   },
+//   {
+//     name: "Data Analytics",
+//     description:
+//       "Transforming raw data into actionable insights to drive business decisions.",
+//     techStack: ["Python", "Pandas", "SQL", "Tableau", "Machine Learning"],
+//     icon: animation2,
+//   },
+//   {
+//     name: "Business Development",
+//     description:
+//       "Developing strategies to grow businesses and improve operational efficiency.",
+//     techStack: [
+//       "Market Research",
+//       "Financial Modeling",
+//       "Project Management",
+//       "Strategic Planning",
+//     ],
+//     icon: animation3,
+//   },
+// ];
 
 const services = [
   {
     name: "Web Development",
     description:
       "Building responsive and scalable web applications using modern technologies.",
-    techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
-    icon: animation1,
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+    icon: animation2,
+    itemsTitle: "Tech Stack",
   },
   {
     name: "Data Analytics",
     description:
       "Transforming raw data into actionable insights to drive business decisions.",
-    techStack: ["Python", "Pandas", "SQL", "Tableau", "Machine Learning"],
-    icon: animation2,
+    items: ["Python", "Pandas", "SQL", "Tableau", "Machine Learning"],
+    icon: animation3,
+    itemsTitle: "Tools",
   },
   {
     name: "Business Development",
     description:
       "Developing strategies to grow businesses and improve operational efficiency.",
-    techStack: [
+    items: [
       "Market Research",
       "Financial Modeling",
       "Project Management",
       "Strategic Planning",
     ],
-    icon: animation3,
+    icon: animation1,
+    itemsTitle: "Specialities",
   },
 ];
 
@@ -196,14 +212,18 @@ const ServiceCard: React.FC<{
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
-        <h4 className="mb-2 font-semibold">Tech Stack:</h4>
-        <ul className="list-disc pl-5">
-          {service.techStack.map((tech, techIndex) => (
-            <li key={techIndex} className="text-sm text-muted-foreground">
-              {tech}
-            </li>
+        <h4 className="mb-2 font-semibold">{service.itemsTitle}</h4>
+        <div className="flex flex-wrap gap-2">
+          {service.items.map((item, itemIndex) => (
+            <Badge
+              key={itemIndex}
+              variant="outline"
+              className="font-normal text-primary-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-primary hover:shadow-md"
+            >
+              {item}
+            </Badge>
           ))}
-        </ul>
+        </div>
       </CardContent>
     </Card>
   );
@@ -214,7 +234,7 @@ const Services: React.FC = () => {
     <div className="w-full bg-background">
       <div className="mx-auto max-w-7xl px-5 lg:px-20">
         <section className="pb-[8rem]" id="specialites">
-          <h1 className="mb-4 text-4xl font-bold">My Specialities</h1>
+          <h1 className="mb-4 text-4xl font-bold">Services</h1>
           <p className="mb-12 text-xl text-muted-foreground">
             Expertise in multiple domains to deliver comprehensive solutions.
           </p>

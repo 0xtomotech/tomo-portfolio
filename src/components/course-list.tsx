@@ -51,7 +51,7 @@ const BadgeList: React.FC<{
   isCompleted?: boolean;
 }> = ({ items, title, isCompleted = false }) => (
   <>
-    <h3 className="mb-2 text-base font-medium">{title}</h3>
+    <h3 className="mb-2 text-base font-semibold">{title}</h3>
     <div className="flex flex-wrap gap-2">
       {items.map((item) => (
         <a
@@ -61,8 +61,8 @@ const BadgeList: React.FC<{
           rel="noopener noreferrer"
         >
           <Badge
-            variant={isCompleted ? "default" : "secondary"}
-            className="cursor-pointer transition-all hover:scale-105"
+            variant={isCompleted ? "default" : "outline"}
+            className="font-medium text-primary-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-primary hover:shadow-md"
           >
             {item.name}
           </Badge>
