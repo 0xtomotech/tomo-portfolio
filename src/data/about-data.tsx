@@ -24,7 +24,11 @@ const Animation: React.FC<{ className?: string }> = ({ className }) => (
   <div className={`h-full w-full rounded-lg bg-muted ${className}`}>
     <div className="flex items-center justify-center">
       {/* <Lottie animationData={animationData} className="h-[250px]" /> */}
-      <ClientSideLottie animationData={animationData} className="h-[250px]" />
+      <ClientSideLottie
+        animationData={animationData}
+        loop={true}
+        className="h-[250px]"
+      />
     </div>
   </div>
 );
@@ -52,7 +56,7 @@ export const aboutGridItems: GridItem[] = [
     className: "md:col-span-1 md:row-span-2",
   },
   {
-    title: "A Business Beveloper turned Developer",
+    title: "Business Developer & Software Engineer",
     description:
       "A refreshing combintation of web development, data, strategy, business & analytical expertise.",
     header: <Animation />,
