@@ -8,11 +8,12 @@ import aiLandingPageImg from "@/assets/ai-landing-page.png";
 import customPhoneCaseImg from "@/assets/custom-phone-case.png";
 import algoTradingImg from "@/assets/algo-trading.png";
 import controlFreakImg from "@/assets/control-freak.png";
-import basketBrainsImg from "@/assets/basket-brains.png";
+import basketBrainsImg from "@/assets/basket-brains-logo.png";
 import nbaTrendsImg from "@/assets/nba-trends.png";
-import podcastIntelImg from "@/assets/podcast-intel.png";
 import simpleScraperImg from "@/assets/simple-scraper.png";
 import cs50wImg from "@/assets/cs50w.png";
+import umRunners from "@/assets/um-runners.png";
+import popiRizsi from "@/assets/popirizsi.png";
 
 export interface Project {
   title: string;
@@ -101,11 +102,15 @@ export const projectsData: Project[] = [
     techStack: ["Next.js", "Framer Motion", "Tailwind CSS"],
     links: [
       { name: "GitHub", url: "https://github.com/0xtomotech/ai-landing-page" },
+      {
+        name: "Live Demo",
+        url: "https://ai-landing-page-brown-rho.vercel.app/",
+      },
     ],
     rating: "must have",
     description:
       "A modern dark-themed landing page built with Next.js, Framer Motion, and Tailwind CSS. This project demonstrates skills in responsive design, animations, and user interactions, creating an engaging and visually appealing web experience.",
-    imageUrl: sampleProjectImg,
+    imageUrl: aiLandingPageImg,
   },
   {
     title: "Custom Phone Case Shop",
@@ -143,7 +148,7 @@ export const projectsData: Project[] = [
     rating: "must have",
     description:
       "A comprehensive suite of algorithmic trading projects showcasing various strategies and implementations. These projects demonstrate proficiency in financial modeling, data analysis, and automated trading system development using Python, including advanced quantitative finance techniques.",
-    imageUrl: sampleProjectImg,
+    imageUrl: algoTradingImg,
   },
   {
     title: "Control Freak",
@@ -172,7 +177,7 @@ export const projectsData: Project[] = [
     rating: "must have",
     description:
       "An advanced basketball analytics platform combining web development and data science. This project showcases full-stack skills, data visualization, and sports analytics, providing insights for basketball enthusiasts and professionals through a modern web interface.",
-    imageUrl: sampleProjectImg,
+    imageUrl: basketBrainsImg,
   },
   {
     title: "NBA Trends & API",
@@ -188,7 +193,7 @@ export const projectsData: Project[] = [
         url: "https://github.com/0xtomotech/nba_api_project0",
       },
     ],
-    rating: "must have",
+    rating: "nice to have",
     description:
       "A comprehensive NBA data analysis project utilizing various APIs and data processing techniques. This project demonstrates skills in data extraction, cleaning, analysis, and visualization of complex sports statistics, providing deep insights into NBA trends and player performance.",
     imageUrl: sampleProjectImg,
@@ -200,7 +205,7 @@ export const projectsData: Project[] = [
     links: [
       { name: "GitHub", url: "https://github.com/0xtomotech/podcast_intel" },
     ],
-    rating: "must have",
+    rating: "nice to have",
     description:
       "An AI-powered podcast analysis tool that extracts insights from audio content. This project showcases skills in natural language processing, audio processing, and machine learning to provide valuable analytics for podcast creators and listeners, enhancing content understanding and audience engagement.",
     imageUrl: sampleProjectImg,
@@ -227,6 +232,34 @@ export const projectsData: Project[] = [
     rating: "must have",
     description:
       "A collection of projects completed as part of Harvard's CS50 Web Programming course. These projects showcase a wide range of web development skills, from frontend design to backend implementation using various technologies, demonstrating a comprehensive understanding of full-stack web development.",
-    imageUrl: sampleProjectImg,
+    imageUrl: cs50wImg,
+  },
+  {
+    title: "Ultra Marathon Runners Analysis",
+    category: ["Data Analytics"],
+    techStack: ["Python", "Pandas"],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/0xtomotech/data-analysis-um-runners",
+      },
+    ],
+    rating: "must have",
+    description:
+      "An in-depth analysis of ultra marathon runners' data over the past two decades. This project showcases skills in data manipulation, exploratory data analysis, and visualization using Python and the Pandas library. The analysis provides insights into trends, performance metrics, and patterns among ultra marathon runners.",
+    imageUrl: umRunners,
+  },
+  {
+    title: "Hobby Site for Family Doggos",
+    category: ["Web Dev"],
+    techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    links: [
+      { name: "GitHub", url: "https://github.com/0xtomotech/portfolio_demo" },
+      { name: "Live Demo", url: "https://portfolio-popirizsi.vercel.app/" },
+    ],
+    rating: "must have",
+    description:
+      "A website dedicated to showcasing your family dogs. Built with Next.js, Tailwind CSS, and Framer Motion, this project demonstrates your skills in creating visually appealing and interactive web experiences. Share stories, photos, and information about your furry friends with family and friends.",
+    imageUrl: popiRizsi,
   },
 ];

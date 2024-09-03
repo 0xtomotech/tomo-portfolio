@@ -33,7 +33,7 @@ const ProjectCard = React.forwardRef<
       className="h-full"
     >
       <Card className="group flex h-full flex-col overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-lg dark:shadow-none dark:hover:shadow-[0_0_15px_rgba(255,149,41,0.05)]">
-        <CardHeader className="flex-row items-start justify-between space-x-1 space-y-0 pb-2">
+        <CardHeader className="flex-row items-start justify-between space-x-2 space-y-0 pb-2">
           <div>
             <CardTitle className="text-lg font-semibold">
               {project.title}
@@ -57,8 +57,7 @@ const ProjectCard = React.forwardRef<
               alt={project.title}
               height={128}
               width={160}
-              objectFit="cover"
-              className="transition-transform duration-500 ease-in-out group-hover:scale-110"
+              className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
           </div>
         </CardHeader>
