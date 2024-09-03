@@ -11,8 +11,8 @@ const links = [
     hash: "#home",
   },
   {
-    name: "Specialites",
-    hash: "#specialites",
+    name: "Specialities",
+    hash: "#specialities",
   },
   {
     name: "Projects",

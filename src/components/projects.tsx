@@ -32,7 +32,7 @@ const ProjectCard = React.forwardRef<
       }}
       className="h-full"
     >
-      <Card className="group flex h-full flex-col overflow-hidden">
+      <Card className="group flex h-full flex-col overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-lg dark:shadow-none dark:hover:shadow-[0_0_15px_rgba(255,149,41,0.05)]">
         <CardHeader className="flex-row items-start justify-between space-x-1 space-y-0 pb-2">
           <div>
             <CardTitle className="text-lg font-semibold">
@@ -50,7 +50,7 @@ const ProjectCard = React.forwardRef<
               ))}
             </div>
           </div>
-          <div className="relative h-32 w-36 overflow-hidden rounded-lg">
+          <div className="relative h-24 w-36 overflow-hidden rounded-lg">
             <div className="absolute inset-0 z-10 bg-[#FF9529]/40 mix-blend-multiply transition-opacity duration-500 ease-in-out group-hover:opacity-0"></div>
             <Image
               src={project.imageUrl}

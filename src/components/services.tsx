@@ -192,7 +192,7 @@ const ServiceCard: React.FC<{
     <Card
       onMouseEnter={handleHover}
       onMouseLeave={handleMouseLeave}
-      className="flex flex-col transition-shadow duration-300 ease-in-out hover:shadow-lg"
+      className="flex flex-col transition-shadow duration-300 ease-in-out hover:shadow-lg dark:shadow-none dark:hover:shadow-[0_0_15px_rgba(255,149,41,0.05)]"
     >
       <CardHeader>
         <div className={`mb-4 flex justify-center`}>
@@ -234,7 +234,7 @@ const Services: React.FC = () => {
     <div className="w-full bg-background">
       <div className="mx-auto max-w-7xl px-5 lg:px-20">
         <section className="pb-[8rem]" id="specialites">
-          <h1 className="mb-4 text-4xl font-bold">Services</h1>
+          <h1 className="mb-4 text-4xl font-bold">Specialities</h1>
           <p className="mb-12 text-xl text-muted-foreground">
             Expertise in multiple domains to deliver comprehensive solutions.
           </p>
