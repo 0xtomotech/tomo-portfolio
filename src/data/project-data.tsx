@@ -92,6 +92,20 @@ export const projectsData: Project[] = [
     imageUrl: "https://picsum.photos/300/200",
   },
   {
+    title: "AI Landing Page",
+    summary: "Modern dark-themed landing page",
+    category: ["Web Dev"],
+    techStack: ["Next.JS", "Framer Motion", "Tailwind CSS"],
+    project1: {
+      name: "AI SEO Landing Page",
+      githubRepo: "https://github.com/0xtomotech/ai-landing-page",
+    },
+    rating: "must have",
+    description:
+      "A modern dark-themed landing page built with Next.js, Framer Motion, and Tailwind CSS. This project demonstrates skills in responsive design, animations, and user interactions, creating an engaging and visually appealing web experience.",
+    imageUrl: "https://picsum.photos/300/200",
+  },
+  {
     title: "Custom Phone Case Shop",
     summary: "E-commerce platform for custom phone cases",
     category: ["Web Dev"],

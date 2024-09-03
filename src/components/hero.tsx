@@ -25,9 +25,9 @@ const Hero = () => {
 
   const [typewriterText, setTypewriterText] = useState("");
   const phrases = [
-    "Full-Stack Developer",
-    "Data Analyst & Scientist",
-    "Business Development Expert",
+    "[Full-Stack Developer]",
+    "[Data Analyst & Scientist]",
+    "[Business Development Expert]",
   ];
   const typingSpeed = 100;
   const erasingSpeed = 50;
@@ -171,7 +171,8 @@ const Hero = () => {
           </p>
           <p className="mb-8 max-w-[600px] text-xl text-foreground/70">
             My passion is web devolopment, data analytics and building projects
-            from scratch. Scroll down to learn more about me!
+            from scratch. Scroll down to learn more about me, and let&apos;s
+            connect!
           </p>
           <Button variant="default" size="lg" className="font-semibold">
             Contact me here!

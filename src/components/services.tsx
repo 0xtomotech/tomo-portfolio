@@ -218,7 +218,7 @@ const ServiceCard: React.FC<{
             <Badge
               key={itemIndex}
               variant="outline"
-              className="font-normal text-primary-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-primary hover:shadow-md"
+              className="bg-background font-normal text-primary-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-primary hover:shadow-md"
             >
               {item}
             </Badge>
