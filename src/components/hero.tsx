@@ -2,18 +2,25 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useScroll as useFramerScroll,
+  useTransform,
+} from "framer-motion";
 import { useTheme } from "next-themes";
 import starsBg from "@/assets/stars.png";
 import blackStarsBg from "@/assets/black-stars.png";
+import { useScroll as useCustomScroll } from "@/contexts/scroll-context";
 
 const Hero = () => {
   const sectionRef = useRef(null);
   const { theme } = useTheme();
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress } = useFramerScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   });
+
+  const { scrollTo } = useCustomScroll();
 
   const backgroundPositionY = useTransform(
     scrollYProgress,
@@ -174,7 +181,12 @@ const Hero = () => {
             from scratch. Scroll down to learn more about me, and let&apos;s
             connect!
           </p>
-          <Button variant="default" size="lg" className="font-semibold">
+          <Button
+            onClick={() => scrollTo("contact")}
+            variant="default"
+            size="lg"
+            className="font-semibold"
+          >
             Contact me here!
           </Button>
         </div>
