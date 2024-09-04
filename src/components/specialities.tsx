@@ -1,3 +1,5 @@
+// NOT NEEDED ANYMORE SERVICES IN USE
+
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -109,7 +111,7 @@ const Specialities: React.FC = () => {
   return (
     <div className="w-full bg-background">
       <div className="mx-auto max-w-7xl px-5 lg:px-20">
-        <section className="pb-[8rem]" id="specialites">
+        <section className="pb-[8rem]" id="specialities">
           <h1 className="mb-4 text-4xl font-bold">My Specialities</h1>
           <p className="mb-12 text-xl text-muted-foreground">
             Expertise in multiple domains to deliver comprehensive solutions.

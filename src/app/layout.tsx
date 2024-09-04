@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { ScrollProvider } from "@/contexts/scroll-context";
 
 const clashGrotesk = localFont({
   src: [
@@ -52,9 +53,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
-          <Footer />
+          <ScrollProvider>
+            <Header />
+            {children}
+            <Footer />
+          </ScrollProvider>
         </ThemeProvider>
       </body>
     </html>
