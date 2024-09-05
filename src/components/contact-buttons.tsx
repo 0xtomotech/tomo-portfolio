@@ -18,7 +18,7 @@ const ContactButtons = () => {
   return (
     <div className="flex items-center space-x-6">
       <button
-        onClick={() => copyToClipboard("email@email.com", "email")}
+        onClick={() => copyToClipboard("0xtomotech@gmail.com", "email")}
         className="flex items-center space-x-2 transition-colors duration-300 hover:text-background"
       >
         <span className="relative inline-block">
@@ -28,11 +28,11 @@ const ContactButtons = () => {
             style={{ animationDuration: "1s" }}
           ></span>
         </span>
-        <span className="text-sm font-medium">email@email.com</span>
+        <span className="text-sm font-medium">0xtomotech@gmail.com</span>
       </button>
       <div className="h-6 w-px bg-foreground/20"></div>
       <button
-        onClick={() => copyToClipboard("+49 1234567", "phone number")}
+        onClick={() => copyToClipboard("+4915209903242", "phone number")}
         className="flex items-center space-x-2 transition-colors duration-300 hover:text-background"
       >
         <span className="relative inline-block">
@@ -42,7 +42,7 @@ const ContactButtons = () => {
             style={{ animationDuration: "1s" }}
           ></span>
         </span>
-        <span className="text-sm font-medium">+49 1234567</span>
+        <span className="text-sm font-medium">+49 1520 990 3242</span>
       </button>
     </div>
   );

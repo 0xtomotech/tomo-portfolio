@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef, useEffect, useCallback, useState } from "react";
 import {
   motion,
   useMotionTemplate,
@@ -16,9 +16,11 @@ import { useTheme } from "next-themes";
 import starsBgDark from "@/assets/stars.png";
 import starsBgLight from "@/assets/black-stars.png";
 import gridLines from "@/assets/grid-lines.png";
-import { MailOpen, Phone, Copy } from "lucide-react";
+import { MailOpen, Phone, Copy, Check } from "lucide-react";
 import { toast } from "sonner";
 import ContactButtons from "./contact-buttons";
+import { sendEmail } from "@/actions/send-email";
+import SubmitBtn from "./submit-button";
 
 const useRelativeMousePosition = (to: React.RefObject<HTMLElement>) => {
   const mouseX = useMotionValue(0);
@@ -62,16 +64,12 @@ const CTA: React.FC = () => {
 
   const starsBg = theme === "dark" ? starsBgDark : starsBgLight;
 
-  const copyToClipboard = (text: string, type: "email" | "phone") => {
-    navigator.clipboard.writeText(text).then(() => {
-      toast.success(
-        `${type.charAt(0).toUpperCase() + type.slice(1)} copied to clipboard!`,
-        {
-          duration: 2000,
-          icon: <Copy className="h-4 w-4" />,
-        },
-      );
-    });
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const resetForm = () => {
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -124,77 +122,60 @@ const CTA: React.FC = () => {
                   </p>
 
                   <ContactButtons />
-                  {/* SEMI OLD */}
-                  {/* <div className="flex items-center space-x-6">
-                    <button
-                      onClick={() =>
-                        copyToClipboard("email@email.com", "email")
-                      }
-                      className="group flex items-center space-x-2 transition-colors hover:text-primary"
-                    >
-                      <MailOpen className="h-5 w-5 transition-transform group-hover:scale-110" />
-                      <span className="text-sm font-medium">
-                        email@email.com
-                      </span>
-                    </button>
-                    <div className="h-6 w-px bg-foreground"></div>
-                    <button
-                      onClick={() => copyToClipboard("+49 1234567", "phone")}
-                      className="group flex items-center space-x-2 transition-colors duration-300 hover:text-background"
-                    >
-                      <Phone className="h-5 w-5 transition-transform group-hover:scale-110" />
-                      <span className="text-sm font-medium">+49 1234567</span>
-                    </button>
-                  </div> */}
-
-                  {/* OLD */}
-                  {/* <h1 className="mb-4 text-6xl font-bold text-foreground">
-                    Let&apos;s create something amazing together!
-                  </h1>
-                  <p className="text-xl text-foreground">
-                    Ready to bring your next project to life? Let&apos;s connect
-                    and discuss how I can help you achieve your goals.
-                  </p>
-                  <div className="flex gap-4">
-                    <div className="flex items-center justify-center gap-1">
-                      <MailOpen className="h-4 w-4" />
-                      <p className="text-sm">email@email.com</p>
-                    </div>
-                    <div className="flex items-center justify-center gap-1">
-                      <Phone className="h-4 w-4" />
-                      <p className="text-sm">+49 1234567</p>{" "}
-                    </div>
-                  </div> */}
                 </div>
                 <div className="flex flex-col items-start md:col-span-2">
                   <h1 className="mb-4 text-xl font-medium text-foreground">
                     Shoot me an email or reach out here!
                   </h1>
-                  <form className="w-full space-y-4">
+                  <form
+                    className="w-full space-y-4"
+                    action={async (formData) => {
+                      const { data, error } = await sendEmail(formData);
+                      if (error) {
+                        toast.error(error);
+                        return;
+                      } else {
+                        toast.success("Message sent!", {
+                          duration: 2000,
+                          icon: <Check className="h-4 w-4" />,
+                        });
+                        resetForm();
+                      }
+                    }}
+                  >
                     <Input
                       type="email"
+                      name="senderEmail"
+                      maxLength={500}
                       placeholder="Your email"
                       required
                       className="bg-background text-foreground placeholder:text-muted-foreground"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
-                    <Input
+                    {/* <Input
                       type="text"
                       placeholder="Subject"
                       required
                       className="bg-background text-foreground placeholder:text-muted-foreground"
-                    />
+                    /> */}
                     <textarea
-                      className="h-32 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                      className="h-[140px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                       placeholder="Your message"
+                      name="message"
+                      maxLength={1000}
                       required
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                     ></textarea>
                     <div className="justify-start">
-                      <Button
+                      <SubmitBtn />
+                      {/* <Button
                         type="submit"
                         className="bg-primary font-semibold text-primary-foreground transition duration-300 hover:bg-foreground/90 hover:text-background"
                       >
                         Send Message
-                      </Button>
+                      </Button> */}
                     </div>
                   </form>
                 </div>

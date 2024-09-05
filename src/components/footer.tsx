@@ -12,13 +12,13 @@ const links = [
 ];
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, url: "https://github.com/yourusername" },
+  { name: "GitHub", icon: Github, url: "https://github.com/0xtomotech" },
   {
     name: "LinkedIn",
     icon: Linkedin,
-    url: "https://linkedin.com/in/yourusername",
+    url: "https://www.linkedin.com/in/tamasszazdi/",
   },
-  { name: "X", icon: Twitter, url: "https://x.com/yourusername" },
+  { name: "X", icon: Twitter, url: "https://x.com/tomohoop" },
 ];
 
 const Footer: React.FC = () => {
