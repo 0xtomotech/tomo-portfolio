@@ -53,7 +53,7 @@ const Header = () => {
         </motion.div>
         <div className="flex flex-row items-center gap-4">
           <div className="hidden sm:block">
-            <ul className="flex flex-wrap items-center justify-center gap-y-1 text-base font-medium sm:w-[initial] sm:flex-nowrap sm:gap-1">
+            <ul className="flex flex-wrap items-center justify-center gap-y-1 text-base font-semibold sm:w-[initial] sm:flex-nowrap sm:gap-1">
               {links.map((link) => (
                 <motion.li
                   key={link.sectionId}
@@ -63,7 +63,7 @@ const Header = () => {
                 >
                   {/* Highlight start */}
                   <a
-                    className="group relative flex w-full cursor-pointer items-center justify-center px-3 py-3 text-sm font-medium transition duration-300 hover:text-primary"
+                    className="group relative flex w-full cursor-pointer items-center justify-center px-3 py-3 text-sm transition duration-300 hover:text-primary"
                     onClick={() => scrollTo(link.sectionId)}
                   >
                     <span className="relative z-10">{link.name}</span>
