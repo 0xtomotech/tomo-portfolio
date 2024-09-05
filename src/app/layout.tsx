@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ScrollProvider } from "@/contexts/scroll-context";
+import { Toaster } from "@/components/ui/sonner";
 
 const clashGrotesk = localFont({
   src: [
@@ -74,6 +75,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </ScrollProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

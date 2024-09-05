@@ -16,6 +16,9 @@ import { useTheme } from "next-themes";
 import starsBgDark from "@/assets/stars.png";
 import starsBgLight from "@/assets/black-stars.png";
 import gridLines from "@/assets/grid-lines.png";
+import { MailOpen, Phone, Copy } from "lucide-react";
+import { toast } from "sonner";
+import ContactButtons from "./contact-buttons";
 
 const useRelativeMousePosition = (to: React.RefObject<HTMLElement>) => {
   const mouseX = useMotionValue(0);
@@ -59,6 +62,18 @@ const CTA: React.FC = () => {
 
   const starsBg = theme === "dark" ? starsBgDark : starsBgLight;
 
+  const copyToClipboard = (text: string, type: "email" | "phone") => {
+    navigator.clipboard.writeText(text).then(() => {
+      toast.success(
+        `${type.charAt(0).toUpperCase() + type.slice(1)} copied to clipboard!`,
+        {
+          duration: 2000,
+          icon: <Copy className="h-4 w-4" />,
+        },
+      );
+    });
+  };
+
   return (
     <div className="w-full bg-background">
       <div className="mx-auto max-w-7xl px-5 lg:px-20">
@@ -97,17 +112,64 @@ const CTA: React.FC = () => {
 
             {/* Content */}
             <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-8">
-                <div className="flex flex-col justify-start sm:w-[500px]">
+              <div className="grid grid-cols-1 gap-12 md:grid-cols-5 md:gap-8">
+                <div className="flex flex-col justify-start md:col-span-3">
                   <h1 className="mb-4 text-6xl font-bold text-foreground">
+                    Let&apos;s create something amazing together!
+                  </h1>
+
+                  <p className="mb-6 text-xl text-foreground">
+                    Ready to bring your next project to life? Let&apos;s connect
+                    and discuss how I can help you achieve your goals.
+                  </p>
+
+                  <ContactButtons />
+                  {/* SEMI OLD */}
+                  {/* <div className="flex items-center space-x-6">
+                    <button
+                      onClick={() =>
+                        copyToClipboard("email@email.com", "email")
+                      }
+                      className="group flex items-center space-x-2 transition-colors hover:text-primary"
+                    >
+                      <MailOpen className="h-5 w-5 transition-transform group-hover:scale-110" />
+                      <span className="text-sm font-medium">
+                        email@email.com
+                      </span>
+                    </button>
+                    <div className="h-6 w-px bg-foreground"></div>
+                    <button
+                      onClick={() => copyToClipboard("+49 1234567", "phone")}
+                      className="group flex items-center space-x-2 transition-colors duration-300 hover:text-background"
+                    >
+                      <Phone className="h-5 w-5 transition-transform group-hover:scale-110" />
+                      <span className="text-sm font-medium">+49 1234567</span>
+                    </button>
+                  </div> */}
+
+                  {/* OLD */}
+                  {/* <h1 className="mb-4 text-6xl font-bold text-foreground">
                     Let&apos;s create something amazing together!
                   </h1>
                   <p className="text-xl text-foreground">
                     Ready to bring your next project to life? Let&apos;s connect
                     and discuss how I can help you achieve your goals.
                   </p>
+                  <div className="flex gap-4">
+                    <div className="flex items-center justify-center gap-1">
+                      <MailOpen className="h-4 w-4" />
+                      <p className="text-sm">email@email.com</p>
+                    </div>
+                    <div className="flex items-center justify-center gap-1">
+                      <Phone className="h-4 w-4" />
+                      <p className="text-sm">+49 1234567</p>{" "}
+                    </div>
+                  </div> */}
                 </div>
-                <div className="flex items-center">
+                <div className="flex flex-col items-start md:col-span-2">
+                  <h1 className="mb-4 text-xl font-semibold text-foreground">
+                    Shoot me an email or reach out here!
+                  </h1>
                   <form className="w-full space-y-4">
                     <Input
                       type="email"
@@ -126,12 +188,14 @@ const CTA: React.FC = () => {
                       placeholder="Your message"
                       required
                     ></textarea>
-                    <Button
-                      type="submit"
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                    >
-                      Send Message
-                    </Button>
+                    <div className="justify-start">
+                      <Button
+                        type="submit"
+                        className="bg-primary text-primary-foreground transition duration-300 hover:bg-foreground/90 hover:text-background"
+                      >
+                        Send Message
+                      </Button>
+                    </div>
                   </form>
                 </div>
               </div>
