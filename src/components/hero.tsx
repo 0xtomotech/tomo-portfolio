@@ -185,7 +185,7 @@ const Hero = () => {
             onClick={() => scrollTo("contact")}
             variant="default"
             size="lg"
-            className="font-semibold"
+            className="bg-primary font-semibold text-primary-foreground transition duration-300 hover:bg-foreground/90 hover:text-background"
           >
             Contact me here!
           </Button>

@@ -61,12 +61,24 @@ const Header = () => {
                   initial={{ opacity: 0, y: -100 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
+                  {/* Highlight start */}
                   <a
-                    className="flex w-full cursor-pointer items-center justify-center px-3 py-3 text-sm font-semibold transition duration-300 hover:text-primary"
+                    className="group relative flex w-full cursor-pointer items-center justify-center px-3 py-3 text-sm font-medium transition duration-300 hover:text-primary"
+                    onClick={() => scrollTo(link.sectionId)}
+                  >
+                    <span className="relative z-10">{link.name}</span>
+                    <span className="absolute inset-0 z-0 flex items-center justify-center text-foreground opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      [{link.name}]
+                    </span>
+                  </a>
+                  {/* Highlight end */}
+
+                  {/* <a
+                    className="flex w-full cursor-pointer items-center justify-center px-3 py-3 text-sm font-medium transition duration-300 hover:text-primary"
                     onClick={() => scrollTo(link.sectionId)}
                   >
                     {link.name}
-                  </a>
+                  </a> */}
                 </motion.li>
               ))}
             </ul>

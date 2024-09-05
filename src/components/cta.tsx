@@ -167,7 +167,7 @@ const CTA: React.FC = () => {
                   </div> */}
                 </div>
                 <div className="flex flex-col items-start md:col-span-2">
-                  <h1 className="mb-4 text-xl font-semibold text-foreground">
+                  <h1 className="mb-4 text-xl font-medium text-foreground">
                     Shoot me an email or reach out here!
                   </h1>
                   <form className="w-full space-y-4">
@@ -191,7 +191,7 @@ const CTA: React.FC = () => {
                     <div className="justify-start">
                       <Button
                         type="submit"
-                        className="bg-primary text-primary-foreground transition duration-300 hover:bg-foreground/90 hover:text-background"
+                        className="bg-primary font-semibold text-primary-foreground transition duration-300 hover:bg-foreground/90 hover:text-background"
                       >
                         Send Message
                       </Button>
