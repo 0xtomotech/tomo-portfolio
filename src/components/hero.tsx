@@ -78,7 +78,7 @@ const Hero = () => {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [phrases]); // Add phrases to the dependency array
 
   return (
     <motion.section
