@@ -82,7 +82,7 @@ const About: React.FC = () => {
         <section className="py-20" id="about">
           <h1 className="mb-4 text-4xl font-bold">About Me</h1>
           <p className="mb-12 text-xl text-muted-foreground">
-            Get to know me better through my skills and experiences.
+            A snapshot of the capabilities and journey that fuel my passion.
           </p>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-[auto_1fr_0.8fr]">
             {aboutGridItems.map((item, index) => (

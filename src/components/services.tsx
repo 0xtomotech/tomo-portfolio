@@ -146,7 +146,19 @@ const services = [
     name: "Web Development",
     description:
       "Building responsive and scalable web applications using modern technologies.",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+    items: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn",
+      "Python",
+      "Django",
+      "Flask",
+      "REST API",
+      "PostgreSQL",
+      "Supabase",
+    ],
     icon: animation2,
     itemsTitle: "Tech Stack",
   },
@@ -154,19 +166,32 @@ const services = [
     name: "Data Analytics",
     description:
       "Transforming raw data into actionable insights to drive business decisions.",
-    items: ["Python", "Pandas", "SQL", "Tableau", "Machine Learning"],
+    items: [
+      "Python",
+      "Pandas",
+      "SciPy",
+      "NumPy",
+      "Matplotlib",
+      "Plotly",
+      "Seaborn",
+      "SQL",
+      "Tableau",
+      "Google Analytics",
+    ],
     icon: animation3,
     itemsTitle: "Tools",
   },
   {
     name: "Business Development",
     description:
-      "Developing strategies to grow businesses and improve operational efficiency.",
+      "Developing strategies and relationships to grow businesses and improve operational efficiency.",
     items: [
       "Market Research",
-      "Financial Modeling",
       "Project Management",
       "Strategic Planning",
+      "Sales and Marketing",
+      "Account Management",
+      "Financial Modeling",
     ],
     icon: animation1,
     itemsTitle: "Specialities",
@@ -212,13 +237,13 @@ const ServiceCard: React.FC<{
         </CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
-        <h4 className="mb-2 font-semibold">{service.itemsTitle}</h4>
-        <div className="flex flex-wrap gap-2">
+        <h4 className="mb-2 text-center font-semibold">{service.itemsTitle}</h4>
+        <div className="flex flex-wrap justify-center gap-2">
           {service.items.map((item, itemIndex) => (
             <Badge
               key={itemIndex}
               variant="outline"
-              className="bg-background font-normal text-primary-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-primary hover:shadow-md"
+              className="bg-background font-normal text-primary-foreground transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary hover:shadow-md"
             >
               {item}
             </Badge>

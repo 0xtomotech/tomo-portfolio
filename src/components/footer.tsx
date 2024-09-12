@@ -3,6 +3,7 @@
 import React from "react";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { useScroll } from "@/contexts/scroll-context";
+import { FaXTwitter } from "react-icons/fa6";
 
 const links = [
   { name: "Specialities", sectionId: "specialities" },
@@ -18,7 +19,7 @@ const socialLinks = [
     icon: Linkedin,
     url: "https://www.linkedin.com/in/tamasszazdi/",
   },
-  { name: "X", icon: Twitter, url: "https://x.com/tomohoop" },
+  { name: "X", icon: FaXTwitter, url: "https://x.com/tomohoop" },
 ];
 
 const Footer: React.FC = () => {

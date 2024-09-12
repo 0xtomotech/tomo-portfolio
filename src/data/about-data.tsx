@@ -35,43 +35,44 @@ const Animation: React.FC<{ className?: string }> = ({ className }) => (
 
 export const aboutGridItems: GridItem[] = [
   {
-    title: "Data Wizard",
+    title: "Data Alchemist",
     description:
-      "Data Science & Analytics is my jam - I love to analyze, make sense of numbers and identify trends.",
+      "Transforming complex datasets into actionable insights. I thrive on uncovering patterns and driving data-informed decisions.",
     header: null, // This will be replaced by the ParallaxHeader component
     className: "md:col-span-1 md:row-span-2",
   },
   {
-    title: "Diverse Range of Experience",
+    title: "Versatile Collaborator",
     description:
-      "Worked with companies of all sizes, from startups to corporates.",
+      "From nimble startups to industry giants, I've adapted my skills to deliver value across diverse business environments.",
     header: <LogoShowcase />,
     className: "md:col-span-1 md:row-span-1",
   },
   {
-    title: "Self-taught developer",
+    title: "Lifelong Learner",
     description:
-      "After years of growing businesses and developing client relationships, I decided to take the leap and become a developer to chase my dreams. No regrets.",
+      "Embraced the challenge of transitioning careers, demonstrating dedication and a passion for continuous learning in software development.",
     header: <CourseList />,
     className: "md:col-span-1 md:row-span-2",
   },
   {
-    title: "Business Developer & Software Engineer",
+    title: "Tech-Business Hybrid",
     description:
-      "A refreshing combintation of web development, data, strategy, business & analytical expertise.",
+      "Bridging the gap between business strategy and technical execution. I bring a unique perspective to solve complex problems.",
     header: <Animation />,
     className: "md:col-span-1 md:row-span-1",
   },
   {
-    title: "I bring data to life",
+    title: "Data Storyteller",
     description:
-      "Love to visualise trends, build dashboards, and showcase insights in a creative and appealing way.",
+      "Crafting compelling visual narratives from raw data. I specialize in creating intuitive dashboards that drive understanding and action.",
     header: <Chart />, // Use the new NBAStatsChart component here
     className: "md:col-span-2 md:row-span-1",
   },
   {
-    title: "Hey, this is me! :)",
-    description: "Based in Berlin, Available flexibly.",
+    title: "Global Developer",
+    description:
+      "Berlin-based developer with a global mindset. Committed to delivering high-quality solutions with flexibility and reliability.",
     header: (
       <div className="relative w-full overflow-hidden rounded-lg bg-primary">
         <Image

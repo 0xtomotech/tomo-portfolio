@@ -16,7 +16,7 @@ const ContactButtons = () => {
   };
 
   return (
-    <div className="flex items-center space-x-6">
+    <div className="flex flex-col items-start space-y-4 md:flex-row md:items-center md:space-x-6 md:space-y-0">
       <button
         onClick={() => copyToClipboard("0xtomotech@gmail.com", "email")}
         className="flex items-center space-x-2 transition-colors duration-300 hover:text-background"
@@ -30,7 +30,7 @@ const ContactButtons = () => {
         </span>
         <span className="text-sm font-medium">0xtomotech@gmail.com</span>
       </button>
-      <div className="h-6 w-px bg-foreground/20"></div>
+      <div className="hidden h-6 w-px bg-foreground/20 md:block"></div>
       <button
         onClick={() => copyToClipboard("+4915209903242", "phone number")}
         className="flex items-center space-x-2 transition-colors duration-300 hover:text-background"

@@ -22,7 +22,15 @@ const specialities = [
     name: "Web Development",
     description:
       "Building responsive and scalable web applications using modern technologies.",
-    techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
+    techStack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Django",
+      "Flask",
+      "PostgreSQL",
+    ],
     animationData: webDevAnimation,
     animationHeight: "h-[200px]",
   },

@@ -51,7 +51,7 @@ const ProjectCard = React.forwardRef<
             </div>
           </div>
           <div className="relative h-24 w-36 overflow-hidden rounded-lg">
-            <div className="absolute inset-0 z-10 bg-[#FF9529]/40 mix-blend-multiply transition-opacity duration-500 ease-in-out group-hover:opacity-0"></div>
+            <div className="absolute inset-0 z-10 bg-[#FF9529]/15 mix-blend-multiply transition-opacity duration-500 ease-in-out group-hover:opacity-0"></div>
             <Image
               src={project.imageUrl}
               alt={project.title}
@@ -157,7 +157,8 @@ const Projects: React.FC = () => {
         <section className="py-20" id="projects">
           <h1 className="mb-4 text-4xl font-bold">Project Highlights</h1>
           <p className="mb-12 text-xl text-muted-foreground">
-            A showcase of my best work across various domains.
+            A curated collection of projects I&apos;m passionate about —
+            spanning multiple domains.
           </p>
           <motion.div
             ref={containerRef}
