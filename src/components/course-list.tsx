@@ -40,8 +40,28 @@ const sources = [
     url: "https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw",
   },
   {
-    name: "Josh tried coding",
-    url: "https://www.youtube.com/@joshtriedcoding",
+    name: "Fireship",
+    url: "https://www.youtube.com/@Fireship",
+  },
+  {
+    name: "Daily.dev",
+    url: "https://daily.dev/",
+  },
+  {
+    name: "Dev.to",
+    url: "https://dev.to/",
+  },
+  {
+    name: "Hacker News",
+    url: "https://news.ycombinator.com/",
+  },
+  {
+    name: "Product Hunt",
+    url: "https://www.producthunt.com/topics/developer-tools",
+  },
+  {
+    name: "Indie Hackers",
+    url: "https://www.indiehackers.com/",
   },
 ];
 
@@ -62,7 +82,7 @@ const BadgeList: React.FC<{
         >
           <Badge
             variant={isCompleted ? "default" : "outline"}
-            className="font-medium text-primary-foreground transition-all duration-300 ease-in-out hover:scale-110 hover:bg-primary hover:shadow-md"
+            className="font-medium text-primary-foreground transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary hover:shadow-md"
           >
             {item.name}
           </Badge>
@@ -74,7 +94,7 @@ const BadgeList: React.FC<{
 
 const GitHubSection: React.FC = () => (
   <>
-    <h3 className="mb-2 text-base font-medium">Built Interesting Projects</h3>
+    <h3 className="mb-2 text-base font-semibold">Built Interesting Projects</h3>
     <a
       href="https://github.com/0xtomotech" // Replace with your actual GitHub profile URL
       target="_blank"
@@ -82,9 +102,9 @@ const GitHubSection: React.FC = () => (
     >
       <Badge
         variant="default"
-        className="inline-flex cursor-pointer items-center space-x-2 text-base transition-all hover:scale-105"
+        className="inline-flex items-center gap-2 text-xl font-medium text-primary-foreground transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary hover:shadow-md"
       >
-        <IconBrandGithub className="h-4 w-4" />
+        <IconBrandGithub className="h-6 w-6" />
         <span>Check out my GitHub</span>
       </Badge>
     </a>

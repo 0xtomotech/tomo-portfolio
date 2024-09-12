@@ -1,14 +1,3 @@
-## TOMO PORTFOLIO
-
-### TODOs
-
-- [ ] Revise Projects data
-- [x] Revise About data
-- [x] Cancel Claude and Github Copilot
-- [x] Fix the footer
-- [ ] Fix readme for first 6 projects! and the rest!
-- [ ] Improve bento box one last time
-
 # Tomo's Portfolio Website
 
 ![Next.js](https://img.shields.io/badge/Next.js-13-black)

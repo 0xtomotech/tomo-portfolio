@@ -1,20 +1,17 @@
 import { StaticImageData } from "next/image";
 import sampleProjectImg from "@/assets/project-sample2.png";
 import portfolioImg from "@/assets/portfolio.png";
-import quantaImg from "@/assets/quanta.png";
-import t3GalleryImg from "@/assets/t3-gallery.png";
 import firstGameImg from "@/assets/first-game.png";
 import aiLandingPageImg from "@/assets/ai-landing-page.png";
-import customPhoneCaseImg from "@/assets/custom-phone-case.png";
+import customPhoneCaseImg from "@/assets/custom-phone.png";
 import algoTradingImg from "@/assets/algo-trading.png";
-import controlFreakImg from "@/assets/control-freak.png";
-import basketBrainsImg from "@/assets/basket-brains-logo.png";
+import basketBrainsImg from "@/assets/basket2.png";
 import nbaTrendsImg from "@/assets/nba-trends.png";
-import simpleScraperImg from "@/assets/simple-scraper.png";
 import cs50wImg from "@/assets/cs50w.png";
 import umRunners from "@/assets/um-runners.png";
 import popiRizsi from "@/assets/popirizsi.png";
 import hooperStatsImg from "@/assets/hooperstatsstack.png";
+import podcastIntelImg from "@/assets/podcast-intel.png";
 
 export interface Project {
   title: string;
@@ -30,6 +27,51 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
+  {
+    title: "Basket Brains",
+    category: ["Web Dev", "Data Analytics"],
+    techStack: [
+      "Python",
+      "Django",
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind",
+    ],
+    links: [{ name: "Coming Soon!", url: "TBC" }],
+    rating: "must have",
+    description:
+      "Advanced basketball analytics platform combining web development and data science. Work in progress - Coming Soon!",
+    imageUrl: basketBrainsImg,
+  },
+  {
+    title: "AI Landing Page",
+    category: ["Web Dev"],
+    techStack: ["Next.js", "Framer Motion", "Tailwind CSS"],
+    links: [
+      { name: "GitHub", url: "https://github.com/0xtomotech/ai-landing-page" },
+      {
+        name: "Live Demo",
+        url: "https://ai-landing-page-brown-rho.vercel.app/",
+      },
+    ],
+    rating: "must have",
+    description:
+      "Modern dark-themed landing page showcasing responsive design, animations, and user interactions.",
+    imageUrl: aiLandingPageImg,
+  },
+  {
+    title: "CS50W Projects",
+    category: ["Web Dev", "CS50"],
+    techStack: ["JavaScript", "TypeScript", "React", "Python", "Django", "CSS"],
+    links: [
+      { name: "GitHub", url: "https://github.com/0xtomotech/CS50w-projects" },
+    ],
+    rating: "must have",
+    description:
+      "Collection of projects from Harvard's CS50W course, showcasing a wide range of full-stack web development skills across various technologies.",
+    imageUrl: cs50wImg,
+  },
   {
     title: "Hooper Stats",
     category: ["Web Dev", "Data Analytics"],
@@ -55,6 +97,69 @@ export const projectsData: Project[] = [
     description:
       "Full-stack proof of concept combining web development and data analytics for basketball statistics. Utilizes React frontend and Django backend for in-depth performance metrics.",
     imageUrl: hooperStatsImg,
+  },
+  {
+    title: "Podcast Intel",
+    category: ["AI", "Data Analytics"],
+    techStack: ["Python"],
+    links: [
+      { name: "GitHub", url: "https://github.com/0xtomotech/podcast_intel" },
+    ],
+    rating: "nice to have",
+    description:
+      "AI-powered podcast analysis tool extracting insights from audio content. Name your podcast, download all content, and get insights.",
+    imageUrl: podcastIntelImg,
+  },
+  {
+    title: "Algorithmic Trading",
+    category: ["Algo Trading"],
+    techStack: ["Python"],
+    links: [
+      {
+        name: "Algo 0",
+        url: "https://github.com/0xtomotech/algo_trading_project0",
+      },
+      {
+        name: "Algo 1",
+        url: "https://github.com/0xtomotech/algo_trading_project1",
+      },
+      {
+        name: "Strategies",
+        url: "https://github.com/0xtomotech/trading_strategies",
+      },
+    ],
+    rating: "must have",
+    description:
+      "Suite of algorithmic trading projects showcasing various strategies. Demonstrates proficiency in financial modeling, data analysis, and automated trading system development.",
+    imageUrl: algoTradingImg,
+  },
+  {
+    title: "Ultra Marathon Runners Analysis",
+    category: ["Data Analytics"],
+    techStack: ["Python", "Pandas"],
+    links: [
+      {
+        name: "GitHub",
+        url: "https://github.com/0xtomotech/data-analysis-um-runners",
+      },
+    ],
+    rating: "must have",
+    description:
+      "In-depth analysis of ultra marathon runners' data over two decades. Demonstrates data manipulation, exploratory analysis, and visualization skills using Python and Pandas.",
+    imageUrl: umRunners,
+  },
+  {
+    title: "Hobby Site for Family Doggos",
+    category: ["Web Dev"],
+    techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    links: [
+      { name: "GitHub", url: "https://github.com/0xtomotech/portfolio_demo" },
+      { name: "Live Demo", url: "https://portfolio-popirizsi.vercel.app/" },
+    ],
+    rating: "must have",
+    description:
+      "Interactive website showcasing family doggos. Demonstrates skills in creating visually appealing web experiences using Next.js, Tailwind CSS, and Framer Motion.",
+    imageUrl: popiRizsi,
   },
   {
     title: "Portfolio Site",
@@ -87,76 +192,10 @@ export const projectsData: Project[] = [
     links: [
       { name: "GitHub", url: "https://github.com/0xtomotech/t3gallery_demo" },
     ],
-    rating: "nice to have",
+    rating: "not relevant",
     description:
       "Modern gallery app built with T3 stack, integrating TypeScript, Tailwind, and tRPC. Exemplifies best practices in type-safe, full-stack Next.js development.",
     imageUrl: sampleProjectImg,
-  },
-  {
-    title: "First Game",
-    category: ["Game Dev"],
-    techStack: ["Godot", "GDScript"],
-    links: [
-      { name: "GitHub", url: "https://github.com/0xtomotech/First-Game" },
-    ],
-    rating: "nice to have",
-    description:
-      "Unique Mario-style platformer developed with Godot engine. Showcases game development skills in level design, character controls, and mechanics implementation.",
-    imageUrl: sampleProjectImg,
-  },
-  {
-    title: "AI Landing Page",
-    category: ["Web Dev"],
-    techStack: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    links: [
-      { name: "GitHub", url: "https://github.com/0xtomotech/ai-landing-page" },
-      {
-        name: "Live Demo",
-        url: "https://ai-landing-page-brown-rho.vercel.app/",
-      },
-    ],
-    rating: "must have",
-    description:
-      "Modern dark-themed landing page showcasing responsive design, animations, and user interactions.",
-    imageUrl: aiLandingPageImg,
-  },
-  {
-    title: "Custom Phone Case Shop",
-    category: ["Web Dev"],
-    techStack: ["React", "TypeScript", "Next.js", "Tailwind"],
-    links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/0xtomotech/custom_phone_case_shop",
-      },
-    ],
-    rating: "nice to have",
-    description:
-      "E-commerce platform for custom phone cases. Demonstrates skills in building online stores, product customization, and secure checkout processes.",
-    imageUrl: sampleProjectImg,
-  },
-  {
-    title: "Algorithmic Trading",
-    category: ["Algo Trading"],
-    techStack: ["Python"],
-    links: [
-      {
-        name: "Project 1",
-        url: "https://github.com/0xtomotech/algo_trading_project0",
-      },
-      {
-        name: "Project 2",
-        url: "https://github.com/0xtomotech/algo_trading_project1",
-      },
-      {
-        name: "Strategies",
-        url: "https://github.com/0xtomotech/trading_strategies",
-      },
-    ],
-    rating: "must have",
-    description:
-      "Suite of algorithmic trading projects showcasing various strategies. Demonstrates proficiency in financial modeling, data analysis, and automated trading system development.",
-    imageUrl: algoTradingImg,
   },
   {
     title: "Control Freak",
@@ -165,27 +204,10 @@ export const projectsData: Project[] = [
     links: [
       { name: "GitHub", url: "https://github.com/0xtomotech/control_freak" },
     ],
-    rating: "nice to have",
+    rating: "not relevant",
     description:
       "Collaborative playlist management app for Spotify built with Django and React. Showcases full-stack development skills with focus on intuitive UI and robust backend systems.",
     imageUrl: sampleProjectImg,
-  },
-  {
-    title: "Basket Brains",
-    category: ["Web Dev", "Data Analytics"],
-    techStack: [
-      "Python",
-      "Django",
-      "React",
-      "TypeScript",
-      "Next.js",
-      "Tailwind",
-    ],
-    links: [{ name: "Landing Page", url: "TBC" }],
-    rating: "must have",
-    description:
-      "Advanced basketball analytics platform combining web development and data science. Work in progress - Coming Soon!",
-    imageUrl: basketBrainsImg,
   },
   {
     title: "NBA Trends & API",
@@ -204,19 +226,7 @@ export const projectsData: Project[] = [
     rating: "nice to have",
     description:
       "Comprehensive NBA data analysis project utilizing various APIs. Demonstrates skills in data extraction, cleaning, analysis, and visualization of complex sports statistics.",
-    imageUrl: sampleProjectImg,
-  },
-  {
-    title: "Podcast Intel",
-    category: ["AI", "Data Analytics"],
-    techStack: ["Python"],
-    links: [
-      { name: "GitHub", url: "https://github.com/0xtomotech/podcast_intel" },
-    ],
-    rating: "nice to have",
-    description:
-      "AI-powered podcast analysis tool extracting insights from audio content. Name your podcast, download all content, and get insights.",
-    imageUrl: sampleProjectImg,
+    imageUrl: nbaTrendsImg,
   },
   {
     title: "Simple Scraper",
@@ -225,49 +235,36 @@ export const projectsData: Project[] = [
     links: [
       { name: "GitHub", url: "https://github.com/0xtomotech/simple_scraper" },
     ],
-    rating: "nice to have",
+    rating: "not relevant",
     description:
       "Versatile web scraping tool demonstrating skills in data extraction, HTML parsing, and efficient information collection from various web structures.",
     imageUrl: sampleProjectImg,
   },
   {
-    title: "CS50W Projects",
-    category: ["Web Dev", "CS50"],
-    techStack: ["JavaScript", "TypeScript", "React", "Python", "Django", "CSS"],
-    links: [
-      { name: "GitHub", url: "https://github.com/0xtomotech/CS50w-projects" },
-    ],
-    rating: "must have",
-    description:
-      "Collection of projects from Harvard's CS50W course, showcasing a wide range of full-stack web development skills across various technologies.",
-    imageUrl: cs50wImg,
-  },
-  {
-    title: "Ultra Marathon Runners Analysis",
-    category: ["Data Analytics"],
-    techStack: ["Python", "Pandas"],
+    title: "Custom Phone Case Shop",
+    category: ["Web Dev"],
+    techStack: ["React", "TypeScript", "Next.js", "Tailwind"],
     links: [
       {
         name: "GitHub",
-        url: "https://github.com/0xtomotech/data-analysis-um-runners",
+        url: "https://github.com/0xtomotech/custom_phone_case_shop",
       },
     ],
-    rating: "must have",
+    rating: "nice to have",
     description:
-      "In-depth analysis of ultra marathon runners' data over two decades. Demonstrates data manipulation, exploratory analysis, and visualization skills using Python and Pandas.",
-    imageUrl: umRunners,
+      "E-commerce platform for custom phone cases. Demonstrates skills in building online stores, product customization, and secure checkout processes.",
+    imageUrl: customPhoneCaseImg,
   },
   {
-    title: "Hobby Site for Family Doggos",
-    category: ["Web Dev"],
-    techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    title: "First Game",
+    category: ["Game Dev"],
+    techStack: ["Godot", "GDScript"],
     links: [
-      { name: "GitHub", url: "https://github.com/0xtomotech/portfolio_demo" },
-      { name: "Live Demo", url: "https://portfolio-popirizsi.vercel.app/" },
+      { name: "GitHub", url: "https://github.com/0xtomotech/First-Game" },
     ],
-    rating: "must have",
+    rating: "nice to have",
     description:
-      "Interactive website showcasing family doggos. Demonstrates skills in creating visually appealing web experiences using Next.js, Tailwind CSS, and Framer Motion.",
-    imageUrl: popiRizsi,
+      "Unique Mario-style platformer developed with Godot engine. Showcases game development skills in level design, character controls, and mechanics implementation.",
+    imageUrl: firstGameImg,
   },
 ];
