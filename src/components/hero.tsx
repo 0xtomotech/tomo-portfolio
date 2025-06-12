@@ -173,13 +173,25 @@ const Hero = () => {
             <span className="text-foreground">{typewriterText}</span>
             <span className="animate-blink text-primary">|</span>
           </h2>
-          <p className="mb-2 max-w-[600px] text-xl text-foreground/70">
+          {/* <p className="mb-2 max-w-[600px] text-xl text-foreground/70">
             Welcome to my site, I&apos;m glad you&apos;re here!
           </p>
           <p className="mb-8 max-w-[600px] text-xl text-foreground/70">
             My passion is web devolopment, data analytics and building projects
             from scratch. Scroll down to learn more about me, and let&apos;s
             connect!
+          </p> */}
+          <p className="mb-2 max-w-[600px] text-xl text-foreground/70">
+            A problem solver who combines business strategy, data analysis, and
+            web development to deliver comprehensive solutions.
+          </p>
+          <p className="mb-2 max-w-[600px] text-xl text-foreground/70">
+            I combine my business development background with technical skills
+            in Python, SQL, and web frameworks to take ideas from the right
+            strategic questions to prototyped, functional answers.
+          </p>
+          <p className="mb-8 max-w-[600px] text-xl text-foreground/70">
+            Let&apos;s build something impactful together.
           </p>
           <Button
             onClick={() => scrollTo("contact")}
