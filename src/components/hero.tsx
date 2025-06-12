@@ -32,9 +32,9 @@ const Hero = () => {
 
   const [typewriterText, setTypewriterText] = useState("");
   const phrases = [
-    "[Full-Stack Developer]",
-    "[Data Analyst & Scientist]",
-    "[Business Development Expert]",
+    "[Business Strategy & Development]",
+    "[Data-Analytics & Visualization]",
+    "[Full-Stack Web Development]",
   ];
   const typingSpeed = 100;
   const erasingSpeed = 50;
